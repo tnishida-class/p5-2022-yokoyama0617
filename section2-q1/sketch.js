@@ -1,6 +1,8 @@
-// 小手調べ
 function setup(){
-  for(let i = 0; i < 10; i++){
-    // BLANK[1]
-  }
+stroke(225,0,0);
+for (let x = 100; x > 50; x = x - 10)
+ellipse(50,50,x);
+stroke(0,0,225);
+for (let x = 50; x > 0; x = x - 10)
+ellipse(50,50,x)
 }
