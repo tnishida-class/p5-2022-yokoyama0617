@@ -1,11 +1,12 @@
+// テキスト「配列」～「配列を使った描画」までを収録
 function setup(){
-  createCanvas(400,400);
+  createCanvas(400, 400);
   background(240);
 
   // 配列をランダムに初期化する
   let scores = [];
   for(let i = 0; i < 10; i++){
-    scores[i] = random(20,100); // 60以上100未満のランダムな数を代入
+    scores[i] = random(20, 100); // 60以上100未満のランダムな数を代入
   }
   console.log(scores);
 
@@ -17,38 +18,33 @@ function setup(){
   console.log(sum);
 
   // ここから平均・最大・最小を求めます
-  let avarage, largest, smallest;{
-
-    avarage = sum / 10;
-
-  // ここから棒グラフを描いていきます。まずは背景に横線をn本引く
-  const n = 10;
-  stroke(0);
-  for(let i = 0; i < n; i++){ line(0, height * i / n, width, height * i / n); }
+  let average, largest, smallest;
+  // BLANK[1]　平均値（ヒント average = 合計 / 配列の長さ）
 
   largest = 0;
   for(let i = 0; i < scores.length; i++){
-    if(largest > scores[i]){largest = largest;}
-    else{largest = scores[i];}}
+    // BLANK[2]　ヒント：今までの最大値 largest と scores[i] を比較する
+  }
 
   smallest = 100;
   for(let i = 0; i < scores.length; i++){
-    if(smallest < scores[i]){smallest = smallest;}
-    else{smallest = scores[i];}}
+    // BLANK[3]　ヒント：最小値とだいたい同じ
+  }
 
- noStroke(0)
- for(let i = 0; i < scores.length; i++){
+  // ここから棒グラフを描いていきます。まずは背景に横線をn本引く
+  const n = 10;
+  for(let i = 0; i < n; i++){ line(0, height * i / n, width, height * i / n); }
+  
+  noStroke();
 
-  if(scores[i] == largest){fill(225,0,0)}
-  else if(scores[i] == smallest){fill(0,0,225)}
-  else{fill(130)};
-
+  for(let i = 0; i < scores.length; i++){
     const dx = width / scores.length;
     const h = height * scores[i] / 100;
+    // BLANK[4] ヒント: 条件分岐を使って色を変更します
     rect(i * dx + 2, height - h, dx - 4, h);
-    text(scores[i].toPrecision(3), i * dx, height - h);}
+    fill(0);
+    text(scores[i].toPrecision(3), i * dx, height - h);
+  }
 
-  stroke(0,225,0);
-  line(0, 400 - avarage * 4, 400, 400 - avarage * 4);
-
-}}
+  // BLANK[5] 平均点の線を引きます
+}
