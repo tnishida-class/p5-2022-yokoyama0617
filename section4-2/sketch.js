@@ -20,10 +20,13 @@ function draw(){
 }
 
 function mouseDragged(){
+
+let change = random(20,60);
+
   const dx = mouseX - pmouseX;
   const dy = mouseY - pmouseY;
   if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
+    const b = { x: mouseX, y: mouseY, size: change, vx: dx, vy: dy };
     balls.push(b);
   }
 }
