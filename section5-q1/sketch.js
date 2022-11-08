@@ -14,6 +14,9 @@ function balloon(t, x, y, r, g, b, r2, g2, b2){
   noStroke();
   fill(r, g, b);
   rect(x, y, w + p * 2, h + p * 2);
+  noStroke();
+  fill(r, g, b);
+  triangle(w / 2 + p, h + p * 2, w / 2 + p * 4, h + p * 2, w / 2 + p * 2, h + p * 8);
   fill(r2, g2, b2);
   text(t, x + p, y + h);
 }
