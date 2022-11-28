@@ -1,14 +1,17 @@
 // 最終課題を制作しよう
-// 一度すべて消してやり直しましたが、この時点でshikakuの関数が表示されないようです。バグかもしれません。一瞬だけ顕現しますが即座に背景に揉み消されます。
+// 途中までできました！12時に間に合わない可能性があるため、一旦提出します。
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
+  draw1();
   fill(0);
-  shikaku(4,300,100,90);
+  shikaku(4,100,100,90);
+  draw2();
 }
 
-function draw(){
+function draw1(){
   background(220);
+
   fill(50,100,90);
   noStroke();
   ellipse(100,100,200);
@@ -26,4 +29,19 @@ function shikaku(n, cx, cy, r){
     vertex(x,y);
   }
   endShape(CLOSE);
+}
+
+function draw2(){
+  fill(160,192,255);
+  rect(37,37,126,126);
+
+  fill(0);
+  textSize(18);
+  textFont("serif");
+  text("Department of", 42, 100);
+  text("Grobal Cultures", 42, 115);
+  fill(225,0,0);
+  textSize(5);
+  text("puroguraminngu ha muzukasii", 42, 125);
+  textSize(20);
 }
