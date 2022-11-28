@@ -1,3 +1,4 @@
+// 一時保存
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -38,10 +39,12 @@ function draw2(){
 }
 
 function draw3(){
+
   let x = random(42,121);
   let y = random(42,121);
-  let vx = 3;
-  let vy = 2;
+  let vx = random(3,5);
+  let vy = random(3,5);
+
   ellipse(x,y,10);
 
   x += vx;
