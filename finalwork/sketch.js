@@ -1,5 +1,3 @@
-// 最終課題を制作しよう
-// 途中までできました！12時に間に合わない可能性があるため、一旦提出します。
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
@@ -7,6 +5,9 @@ function setup(){
   fill(0);
   shikaku(4,100,100,90);
   draw2();
+  fill(50,100,90);
+  draw3();
+  draw4();
 }
 
 function draw1(){
@@ -27,14 +28,30 @@ function shikaku(n, cx, cy, r){
     let x = cx + cos(theta) * r;
     let y = cy + sin(theta) * r;
     vertex(x,y);
+    endShape(CLOSE);
   }
-  endShape(CLOSE);
 }
 
 function draw2(){
   fill(160,192,255);
   rect(37,37,126,126);
+}
 
+function draw3(){
+  let x = random(42,121);
+  let y = random(42,121);
+  let vx = 3;
+  let vy = 2;
+  ellipse(x,y,10);
+
+  x += vx;
+  y += vy;
+
+  if(x < 42 || x > 121){ vx = -1 * vx; }
+  if(y < 42 || y > 121){ vy = -1 * vy; }
+}
+  
+function draw4(){
   fill(0);
   textSize(18);
   textFont("serif");
